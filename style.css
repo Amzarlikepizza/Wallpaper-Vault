@@ -1,0 +1,379 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #171717;
+  color: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.25rem 2rem;
+  margin: 0;
+  width: 100%;
+  background: #f25a5a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-title {
+  margin: 0;
+  text-align: center;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2.5rem;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.site-slogan {
+  margin: 0.2rem 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.4px;
+}
+
+.title-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.header-actions {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.language-toggle {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  min-width: 140px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.language-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: #222222;
+  border: 1px solid #3b3b3b;
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-width: 150px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.language-menu.is-open {
+  display: flex;
+}
+
+.language-option {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  background: transparent;
+  color: #f7f7f7;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-option:hover {
+  background: #333333;
+}
+
+.page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+.intro h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.7rem;
+}
+
+.intro p {
+  margin: 0;
+  color: #d8d8d8;
+}
+
+.view-toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.view-toggle-label {
+  color: #f7f7f7;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.38rem 0.7rem;
+  border-radius: 0.65rem;
+  background: #1e3a8a;
+  border: 1px solid #3b82f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+}
+
+.view-toggle {
+  display: inline-flex;
+  gap: 0.65rem;
+  padding: 0.4rem;
+  border-radius: 999px;
+  background: #2d2d2d;
+  border: 1px solid #444444;
+}
+
+.view-toggle-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: transparent;
+  color: #f7f7f7;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.view-toggle-btn.is-active {
+  background: #f25a5a;
+  color: #ffffff;
+}
+
+.wallpaper-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.wallpaper-list.phone-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: start;
+}
+
+.wallpaper-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: #222222;
+  border: 1px solid #333333;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.wallpaper-image-wrap {
+  flex-shrink: 0;
+  width: min(100%, 320px);
+}
+
+.wallpaper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.wallpaper-list.phone-view .wallpaper-card {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 360px);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.wallpaper-list.phone-view .wallpaper-image-wrap {
+  width: min(100%, 240px);
+  max-width: 240px;
+}
+
+.wallpaper-list.phone-view .wallpaper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.wallpaper-list.phone-view .wallpaper-details {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.wallpaper-list.phone-view .wallpaper-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wallpaper-list.phone-view .wallpaper-actions {
+  width: 100%;
+  align-items: center;
+}
+
+.wallpaper-list.phone-view .download-btn {
+  width: 100%;
+  max-width: 220px;
+  text-align: center;
+}
+
+.wallpaper-details {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.wallpaper-info {
+  min-width: 0;
+}
+
+.wallpaper-title {
+  display: none !important;
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.wallpaper-creator {
+  margin: 0 0 0.2rem;
+  color: #ffd166;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.wallpaper-resolution {
+  margin: 0;
+  color: #8de8b3;
+  font-size: 1.15rem;
+  unicode-bidi: plaintext;
+  display: inline-flex;
+  gap: 0;
+  align-items: center;
+}
+
+.resolution-value {
+  display: inline-block;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.wallpaper-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 170px;
+}
+
+.resolution-select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #4f4f4f;
+  border-radius: 10px;
+  background: #111111;
+  color: #ffffff;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.75rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  background: #22c55e;
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .wallpaper-card,
+  .wallpaper-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wallpaper-image-wrap {
+    width: 100%;
+  }
+
+  .wallpaper-actions {
+    width: 100%;
+  }
+
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-actions {
+    position: static;
+    transform: none;
+    margin-left: auto;
+  }
+
+  .language-menu {
+    right: 0;
+    left: auto;
+  }
+
+  .language-toggle {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
